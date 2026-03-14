@@ -171,11 +171,22 @@ python maker_bot.py             # Advanced market making
 
 | Plan | Price | What You Get |
 |------|-------|-------------|
-| **Pro** | **$39** ~~$49~~ | All 41 modules, full source, no obfuscation |
-| | | Lifetime updates via GitHub |
+| **Pro** | **$39 USDC** ~~$49~~ | All 41 modules, full source, no obfuscation |
+| | | Lifetime updates via private GitHub repo |
 | | | Priority support via GitHub Issues |
 
-👉 **[Get Pro Now](https://gumroad.com/l/polymarket-toolkit-pro)**
+### How to Buy
+
+1. **Send $39 USDC** (Polygon network) to:
+   ```
+   0x73727711e62fFAe1d5Ec9E0a9aE79CcBbd1e6D47
+   ```
+2. **Open a [GitHub Issue](https://github.com/polymarket-trader-max/polymarket-toolkit/issues/new)** with:
+   - Your tx hash
+   - Your GitHub username
+3. **Get access** — You'll be added to the private `polymarket-toolkit-pro` repo within 24h
+
+> ⚡ Only USDC on **Polygon** accepted. Don't send tokens on other chains.
 
 ### Why Pro?
 
