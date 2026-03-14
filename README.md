@@ -4,66 +4,93 @@ A comprehensive suite of automated trading tools for [Polymarket](https://polyma
 
 Built and battle-tested with real capital. Includes market making, signal-based trading, position monitoring, news-driven alerts, backtesting, and more.
 
+> **10,000+ lines of Python** • **41 modules** • **Battle-tested with real money**
+
+---
+
+## 🆓 vs 🔒 What's Included?
+
+This repo contains the **full API surface** of every module. Free modules ship with complete source code. Pro modules include signatures and docstrings so you can evaluate the architecture before upgrading.
+
+| Tier | Modules | What You Get |
+|------|---------|-------------|
+| 🆓 **Free** | 15 modules | Full source code — scanners, monitoring, classification, utilities |
+| 🔒 **Pro** | 26 modules | Market making bots, signal trading, BTC arbitrage, backtesting engine, advanced scanners |
+
+---
+
 ## ✨ Features
 
 ### Core Strategies
-| Module | Description | Risk Level |
-|--------|------------|------------|
-| `spread_maker.py` | **Market Making** — Place dual-sided orders (YES+NO) to earn the bid-ask spread. Zero prediction needed. | Low |
-| `signal_trader.py` | **Signal Trading** — Trade based on quantitative signals: oil price models, live sports scores, time decay | Medium |
-| `btc_lag_trader.py` | **BTC Lag Arbitrage** — Exploit price lag between crypto exchanges and Polymarket odds | Medium |
-| `maker_bot.py` | **Advanced Market Maker** — Full-featured market making with inventory management | Low |
+| Module | Description | Risk | Tier |
+|--------|------------|------|------|
+| `spread_maker.py` | **Market Making** — Dual-sided orders to earn bid-ask spread | Low | 🔒 |
+| `signal_trader.py` | **Signal Trading** — Oil models, live sports, time decay signals | Medium | 🔒 |
+| `btc_lag_trader.py` | **BTC Lag Arbitrage** — Exploit price lag vs Polymarket odds | Medium | 🔒 |
+| `maker_bot.py` | **Advanced Market Maker** — Inventory management, auto-rotation | Low | 🔒 |
+| `maker_trader.py` | **Maker Trading** — GTC limit order execution | Low | 🔒 |
 
 ### Scanners & Analysis
-| Module | Description |
-|--------|------------|
-| `multi_edge_scanner.py` | Scan 100+ markets for mispriced opportunities using multi-signal scoring |
-| `edge_scanner.py` | Quick edge detection with configurable thresholds |
-| `smart_scanner.py` | AI-enhanced market scanner with category awareness |
-| `cross_arb_scanner.py` | Find cross-market arbitrage (correlated events priced inconsistently) |
-| `time_decay_scanner.py` | Identify time decay opportunities in expiring markets |
-| `market_classifier.py` | Auto-classify markets by type (crypto, sports, politics, etc.) |
-| `live_scanner.py` | Real-time opportunity scanner |
+| Module | Description | Tier |
+|--------|------------|------|
+| `edge_scanner.py` | Quick edge detection with configurable thresholds | 🆓 |
+| `live_scanner.py` | Real-time opportunity scanner | 🆓 |
+| `market_classifier.py` | Auto-classify markets (crypto, sports, politics) | 🆓 |
+| `multi_edge_scanner.py` | Scan 100+ markets with multi-signal scoring | 🔒 |
+| `smart_scanner.py` | AI-enhanced scanner with category awareness | 🔒 |
+| `cross_arb_scanner.py` | Cross-market arbitrage detection | 🔒 |
+| `time_decay_scanner.py` | Time decay opportunities in expiring markets | 🔒 |
 
 ### Risk Management
-| Module | Description |
-|--------|------------|
-| `monitor_positions.py` | **Position Monitor** — Auto take-profit & stop-loss execution |
-| `live_game_guard.py` | Live sports game monitoring with in-play hedging |
-| `trade_now.py` | Quick execution module for urgent trades (FOK market orders) |
+| Module | Description | Tier |
+|--------|------------|------|
+| `monitor_positions.py` | **Position Monitor** — Auto take-profit & stop-loss | 🆓 |
+| `live_game_guard.py` | Live sports monitoring with in-play hedging | 🔒 |
+| `trade_now.py` | Quick execution (FOK market orders) | 🔒 |
 
 ### Data & Intelligence
-| Module | Description |
-|--------|------------|
-| `news_monitor.py` | Multi-source news monitoring (Iran, oil, geopolitics, crypto) with trade signals |
-| `price_tracker.py` | Historical price tracking and snapshots |
-| `btc_scanner.py` | BTC price monitoring for crypto market triggers |
-| `data_fetcher.py` | Gamma API data fetcher with caching |
+| Module | Description | Tier |
+|--------|------------|------|
+| `data_fetcher.py` | Gamma API data fetcher with caching | 🆓 |
+| `price_tracker.py` | Historical price tracking and snapshots | 🆓 |
+| `btc_scanner.py` | BTC price monitoring for triggers | 🆓 |
+| `scorer.py` | Market opportunity scoring (0-100 scale) | 🆓 |
+| `news_monitor.py` | Multi-source news monitoring with trade signals | 🔒 |
 
 ### Backtesting
-| Module | Description |
-|--------|------------|
-| `backtest/engine.py` | Backtesting engine with realistic friction models |
-| `backtest/metrics.py` | Performance metrics (Sharpe, max drawdown, win rate, etc.) |
-| `run_backtest.py` | Run backtests against historical Polymarket data |
-| `calibration_test.py` | Strategy calibration testing |
-| `stress_test.py` | Stress testing under extreme scenarios |
+| Module | Description | Tier |
+|--------|------------|------|
+| `calibration_test.py` | Strategy calibration testing | 🆓 |
+| `backtest/engine.py` | Backtesting engine with friction models | 🔒 |
+| `backtest/metrics.py` | Performance metrics (Sharpe, drawdown, etc.) | 🔒 |
+| `run_backtest.py` | Run backtests against historical data | 🔒 |
+| `stress_test.py` | Stress testing under extreme scenarios | 🔒 |
 
 ### Signal Engine (`signals/`)
-Modular signal framework for building custom strategies:
-- `base.py` — Signal base class
-- `momentum.py` — Price momentum signals
-- `liquidity.py` — Liquidity analysis
-- `price_series.py` — Time series analysis
-- `combo.py` — Multi-signal combination
-- `rules.py` — Rule-based signal generation
+| Module | Description | Tier |
+|--------|------------|------|
+| `signals/base.py` | Signal base class & interface | 🆓 |
+| `signals/momentum.py` | Price momentum signals | 🔒 |
+| `signals/liquidity.py` | Liquidity analysis | 🔒 |
+| `signals/price_series.py` | Time series analysis | 🔒 |
+| `signals/combo.py` | Multi-signal combination | 🔒 |
+| `signals/rules.py` | Rule-based signal generation | 🔒 |
+
+### BTC Direction (`btc_direction/`)
+| Module | Description | Tier |
+|--------|------------|------|
+| `btc_direction/signals.py` | BTC direction signal engine | 🔒 |
+| `btc_direction/lag_arb.py` | Brownian motion lag arb engine | 🔒 |
+| `btc_direction/trader.py` | BTC direction auto-trader | 🔒 |
+| `btc_direction/scanner.py` | BTC market scanner | 🔒 |
 
 ### Utilities
-| Module | Description |
-|--------|------------|
-| `scorer.py` | Market opportunity scoring (0-100 scale) |
-| `trade_utils.py` | Common trading utilities |
-| `gen_api_keys.py` | Generate CLOB API credentials |
+| Module | Description | Tier |
+|--------|------------|------|
+| `trade_utils.py` | Common trading utilities | 🆓 |
+| `gen_api_keys.py` | Generate CLOB API credentials | 🆓 |
+
+---
 
 ## 🚀 Quick Start
 
@@ -76,50 +103,92 @@ pip install py-clob-client requests python-dotenv
 ```bash
 cp .env.example .env
 # Edit .env with your Polymarket CLOB API credentials
-# Get these from: https://clob.polymarket.com
 ```
 
-### 3. Run Market Maker (Safest Strategy)
+### 3. Scan for Opportunities (Free)
 ```bash
-python spread_maker.py
+python edge_scanner.py          # Find mispriced markets
+python live_scanner.py          # Real-time scanning
+python market_classifier.py     # Classify market types
 ```
 
-### 4. Run Position Monitor
+### 4. Monitor Your Positions (Free)
 ```bash
-python monitor_positions.py
+python monitor_positions.py     # Auto take-profit & stop-loss
+python price_tracker.py         # Track price history
 ```
 
-### 5. Scan for Opportunities
+### 5. Run Market Maker (Pro)
 ```bash
-python multi_edge_scanner.py
+python spread_maker.py          # Earn bid-ask spread
+python maker_bot.py             # Advanced market making
 ```
+
+---
 
 ## 📊 Architecture
 
 ```
 ┌─────────────────────────────────────────────────┐
-│                  Data Layer                       │
-│  btc_scanner │ news_monitor │ price_tracker       │
-│  data_fetcher │ Gamma API │ CLOB API              │
+│              🆓 Data Layer                       │
+│  btc_scanner │ price_tracker │ data_fetcher      │
+│  Gamma API │ CLOB API │ Binance API              │
 ├─────────────────────────────────────────────────┤
-│                Signal Layer                       │
-│  signals/* │ btc_direction/* │ market_classifier   │
+│           🆓/🔒 Signal Layer                     │
+│  signals/base 🆓 │ momentum/liquidity/rules 🔒   │
+│  btc_direction/* 🔒 │ market_classifier 🆓       │
 ├─────────────────────────────────────────────────┤
-│               Strategy Layer                      │
-│  spread_maker │ signal_trader │ btc_lag_trader     │
-│  cross_arb │ time_decay │ edge_scanner            │
+│              🔒 Strategy Layer                    │
+│  spread_maker │ signal_trader │ btc_lag_trader    │
+│  cross_arb │ time_decay │ multi_edge_scanner      │
 ├─────────────────────────────────────────────────┤
-│              Execution Layer                      │
-│  maker_bot (GTC) │ trade_now (FOK) │ trade_utils   │
+│           🆓/🔒 Execution Layer                   │
+│  trade_utils 🆓 │ trade_now 🔒 │ maker_bot 🔒    │
 ├─────────────────────────────────────────────────┤
-│             Risk Management                       │
-│  monitor_positions │ live_game_guard │ scorer      │
+│           🆓/🔒 Risk Management                   │
+│  monitor_positions 🆓 │ live_game_guard 🔒        │
+│  scorer 🆓 │ stress_test 🔒                       │
 └─────────────────────────────────────────────────┘
 ```
 
+---
+
+## 🚀 Pro Version
+
+**Get the complete toolkit — all 41 modules, 10,000+ lines of battle-tested code.**
+
+### What's in Pro?
+
+- 🤖 **Market Making Bots** — `spread_maker`, `maker_bot`, `maker_trader` — earn spread without predicting outcomes
+- 📈 **Signal Trading** — Oil price models, live sports scoring, time decay exploitation
+- ⚡ **BTC Lag Arbitrage** — Brownian motion pricing model vs Polymarket odds
+- 🔍 **Advanced Scanners** — Multi-signal scoring, cross-market arb, AI-enhanced scanning
+- 🧪 **Backtesting Suite** — Full engine with realistic friction, Sharpe/drawdown metrics
+- 📡 **News Monitor** — Multi-source geopolitical/crypto news with automated trade signals
+- 🎮 **Live Game Guard** — Real-time sports monitoring with in-play hedging
+
+### Pricing
+
+| Plan | Price | What You Get |
+|------|-------|-------------|
+| **Pro** | **$39** ~~$49~~ | All 41 modules, full source, no obfuscation |
+| | | Lifetime updates via GitHub |
+| | | Priority support via GitHub Issues |
+
+👉 **[Get Pro Now](https://gumroad.com/l/polymarket-toolkit-pro)**
+
+### Why Pro?
+
+- **Real money, real code** — Every module was built and tested with actual capital on Polymarket
+- **No black boxes** — Full Python source code, read every line, modify anything
+- **Structural edge** — Market making earns from spread structure, not from predicting events
+- **0% maker fee** — All strategies use GTC limit orders (Polymarket charges 0% for makers)
+
+---
+
 ## ⚙️ Configuration
 
-Key parameters in `spread_maker.py`:
+Key parameters in `spread_maker.py` (Pro):
 ```python
 MIN_VOLUME_24H = 25000    # Minimum 24h volume ($)
 MIN_SPREAD     = 0.015    # Minimum spread to trade (1.5¢)
@@ -128,20 +197,24 @@ MAX_MARKETS    = 10       # Max concurrent markets
 ORDER_SIZE     = 8        # Tokens per order
 ```
 
-Key parameters in `monitor_positions.py`:
+Key parameters in `monitor_positions.py` (Free):
 ```python
 TAKE_PROFIT_PCT = 0.25    # Take profit at +25%
 STOP_LOSS_PCT   = 0.20    # Stop loss at -20%
 ```
+
+---
 
 ## 🏗️ Polymarket Concepts
 
 - **CLOB**: Central Limit Order Book — where all trading happens
 - **Maker vs Taker**: Maker orders (GTC limit) = 0% fee. Taker orders = 2% fee
 - **YES/NO Tokens**: Binary outcome tokens. YES + NO always = $1 at settlement
-- **Negative Risk Markets**: Multi-outcome markets (e.g., elections with 10+ candidates)
-- **Proxy Wallet**: Polymarket uses a proxy contract for trading (important for API setup)
+- **Negative Risk Markets**: Multi-outcome markets (e.g., elections)
+- **Proxy Wallet**: Polymarket uses a proxy contract for trading
 - **signature_type=1**: Required for email-registered accounts
+
+---
 
 ## ⚠️ Risk Disclaimer
 
@@ -153,25 +226,26 @@ STOP_LOSS_PCT   = 0.20    # Stop loss at -20%
 - Smart contract risks exist on Polygon
 - **Never trade more than you can afford to lose**
 
-## 📈 Real-World Performance Notes
+---
 
-This toolkit was built and refined through live trading with real capital. Key lessons learned:
+## 📈 Real-World Performance Notes
 
 1. **Market making is the safest strategy** — earn spread without predicting outcomes
 2. **Maker fee = 0%** is a structural advantage — always use GTC limit orders
 3. **News-driven trades** need to be fast — information advantage decays in minutes
 4. **Diversification matters** — never concentrate >20% in one theme
-5. **The orderbook in neg-risk markets looks empty** but the matching engine handles cross-outcome arbitrage — limit orders at fair prices will fill
+5. **Neg-risk orderbooks look empty** but the matching engine handles cross-outcome arbitrage
+
+---
 
 ## 📄 License
 
-MIT License — use freely, but at your own risk.
+MIT License — Free modules are fully open source. Pro modules show the API surface; full implementation available via [Pro license](https://gumroad.com/l/polymarket-toolkit-pro).
 
 ## 🤝 Contributing
 
-PRs welcome! Areas that could use improvement:
-- [ ] WebSocket support for real-time orderbook updates
-- [ ] More signal sources (social media, on-chain data)
+PRs welcome for free modules! Areas that could use improvement:
+- [ ] WebSocket support for real-time orderbook
+- [ ] More signal sources (social media, on-chain)
 - [ ] Web dashboard for monitoring
 - [ ] Multi-account support
-- [ ] Better backtesting with real historical orderbook data
