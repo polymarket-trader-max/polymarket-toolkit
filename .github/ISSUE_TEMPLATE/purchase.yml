@@ -1,0 +1,36 @@
+name: "🔒 Purchase Pro"
+description: "Submit your USDC payment to get Pro access"
+title: "Purchase Pro"
+labels: ["purchase"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## How it works
+        1. Send **$39 USDC** on **Polygon** to: `0x73727711e62fFAe1d5Ec9E0a9aE79CcBbd1e6D47`
+        2. Fill in the fields below
+        3. Access is granted automatically within 30 minutes ⚡
+
+  - type: input
+    id: tx_hash
+    attributes:
+      label: Transaction Hash
+      description: "Your Polygon USDC transfer tx hash (0x...)"
+      placeholder: "0x..."
+    validations:
+      required: true
+
+  - type: input
+    id: github_username
+    attributes:
+      label: GitHub Username
+      description: "The GitHub account to grant Pro repo access to"
+      placeholder: "your-username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: "Anything else?"
